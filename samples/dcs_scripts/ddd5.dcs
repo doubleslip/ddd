@@ -1,0 +1,94 @@
+// Demonstration for arriving at a deterministic game state with a specified seed, 
+//  the same choices and the two decks below:
+//
+//  player 0 deck: sample_ddd_deck.ydk
+//  player 1 deck: sample_rikka_sunavalon_deck.ydk
+//  seed = 12345
+// Will perform a series of deterministic actions that selects a choice
+//  and advances the duel state to a different state.
+// Then finally prints a visual of the current game state, the current choices 
+//  available to be selected in that state.
+
+
+sv! logToFile = false
+sv echoDcsCommand = true
+sv autoProcess = true
+
+// Start the duel
+rs! seed = 12345		//start new duel with specific seed
+
+
+// Select choices
+p choice = 1	// nsummon cop...
+p choice = 1	// ...to mzone 1
+p choice = 0	// activate cop eff
+p!			//...ignore chalice
+p choice = 6	// send lamia
+p!
+p choice = 5	// activate shinra (vaylantz field)
+p!
+p choice = 0	// ...and also place konig (vaylantz) to opponent's field
+p!
+p choice = 2	// activate kepler as scale
+p choice = 0	// ...to stzone 0 / left pendulum zone
+p!
+p!
+p choice = 3	// activate shinra eff
+p choice = 0	// targeting kepler
+p!
+p choice = 1	// ...to summon in def mode
+p choice = 0	// activate kepler eff
+p choice = 1	// ...selecting add dark contract eff
+p!
+p choice = 1	// add gate
+p!
+p choice = 0	// link summon gilgamesh
+p choice = 0	// ...using kepler
+p choice = 0	// ...and cop
+p choice = 0	// ...to mzone 5 (left emzone)
+p choice = 0	// activate gilgamesh eff
+p!
+p choice = 13	// scale king rage
+p choice = 6	// ...and cerberus
+p choice = 0	// scale king rage to stzone 0 / left pendulum zone
+p choice = 0	// scale cerebus to stzone 4 / right pendulum zone
+p!
+p choice = 8	// activate gate
+p choice = 1	// ...to stzone 2
+p!
+p!
+p choice = 7	// activate gate eff
+p!
+p choice = 7	// add orthros to hand
+p!
+p choice = 2	// pen summon
+p choice = 2	// ...kepler
+p choice = 1	// ...cop
+p choice = 0	// ...and orthros
+p choice = 0	// othros to mzone 1
+p choice = 1	// ...in def mode
+p choice = 0	// cop to mzone 0
+p choice = 1	// ...in def mode
+p choice = 0	// kepler to mzone 2
+p choice = 1	// ...in def mode
+p!
+p choice = 10	// activate lamia
+p choice = 1	// ...sending gate to gy as cost
+p!
+p choice = 1	// ...summoning to mzone 4
+p choice = 1	// ...in def mode
+p!
+p choice = 8	// activate cerberus scale eff
+p choice = 0
+p!
+p!
+p choice = 0	// attempt to synchro siegfried
+p choice = 0	// ...using orthros
+
+
+
+gs			// show field
+i			// display current options
+c			// cancel selecting current options
+
+//q			// exit program

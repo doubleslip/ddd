@@ -1,0 +1,69 @@
+{
+	 "cardsCdbPath": "ygopro-database-master/locales/en-US/cards.cdb"
+	,"player0DeckPath": "samples/sample_ddd_deck.ydk"
+	,"player1DeckPath": "samples/sample_rikka_sunavalon_deck.ydk"
+	,"autoStart": true
+	,"autoProcess": true
+	,"customLuaScriptsDir": "samples/lua_scripts"
+	,"dcsScriptsDir": "samples/dcs_scripts"
+	,"useFixedSeed": true
+	,"seed": 12345
+	,"echoDcsCommand": false
+	,"debug": {
+		"printCardAttributes": [
+			 "code"
+			,"pduel"
+			,"controller"
+			,"location"
+			,"sequence"
+			,"status"
+			,"reason"
+			,"unique_effect"
+			,"effect_container"
+		],
+		"printGroupAttributes": [
+			 "container"
+		],
+		"printEffectAttributes": [
+			 "pduel"
+			,"owner"
+			,"handler"
+			,"count_limit"
+			,"count_limit_max"
+			,"count_code"
+			,"description"
+			,"code"
+			,"type"
+			,"flag"
+			,"reset"
+			,"status"			
+			,"condition"
+			,"cost"
+			,"target"
+			,"operation"
+			,"value"
+		],
+		"printGamestateChanges": false
+	}
+	,"log": {
+		"highlight": [
+			 "core"
+			,"itr"
+			,"duel.assumes"
+			,"duel.sgroups"
+			,"duel.uncopy"
+			,"effect_count_code"
+			,"indexer"
+			,"grant"
+			,"game_field.effects"
+		],
+		"filter": [
+			 "]->previous."
+		]
+		,"forcePrintf": false
+		,"highlightOverridesFilter": false
+		,"logToFile": false
+		,"logFile": "sandbox/log.txt"
+		,"cacheLogs": false
+	}
+}

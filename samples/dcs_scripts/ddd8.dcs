@@ -1,0 +1,26 @@
+// Demonstration of the brute forcing function (exhaustive search up to depth)
+//
+//  player 0 deck: sample_ddd_deck.ydk
+//  player 1 deck: sample_rikka_sunavalon_deck.ydk
+//  seed = 12345
+//
+// Will brute force the current game state to a depth of 4 and print 200
+//  of the deepest duel states and the choices used to reach the state
+//  (expected output: 1503 at depth of 4, 6845 at depth of 5)
+
+
+sv! logToFile = false
+sv echoDcsCommand = true
+sv autoProcess = true
+
+// Start the duel
+rs! seed = 12345		//start new duel with specific seed
+
+
+// Brute force
+// (brute force to a maximum depth of 4; do not stop when certain amount of results reached (exhaustive search); show no more than 200 results when finished)
+bf! depth = 4, maxDepthResultsLimit = 0, showLimit = 200
+
+exit
+
+

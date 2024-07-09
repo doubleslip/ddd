@@ -1,0 +1,34 @@
+// Demonstration of the brute forcing function when filtering all but
+//  the initial 1st choice
+//
+// player 0 deck: sample_ddd_deck.ydk
+// player 1 deck: sample_rikka_sunavalon_deck.ydk
+// seed = 12345
+//
+// Will brute force the current game state to a depth of 50, will stop
+//  once 10 results at that depth are found and will print the choices
+//  used to reach those states.
+// The filter used to brute force here filters all but the 1st choice, meaning
+//  the algorithm will only find duel states that are derived from the
+//  the 1st choice. Furthermore, those derived duel states do not make use of
+//  any of the choices that were available in the initial duel state, even
+//  if they are available later on.
+// Notice that because all but the initial first choice has been filtered, 
+//  the game space is significantly pruned to the point where significantly 
+//  deeper depths can be reached much more quickly than otherwise.
+
+
+sv! logToFile = false
+sv echoDcsCommand = true
+sv autoProcess = true
+
+// Start the duel
+rs! seed = 12345		//start new duel with specific seed
+
+// Brute force
+// (brute force to maximum depth of 50; filter out specified choices (current duel state has choices from 0 to 11 available); when 10 results at deepest depth (depth of 55) are found, stop the algorithm; show all results)
+bf! depth = 55, filter = "1, 4, 5, 6, 9, 10, 11", maxDepthResultsLimit = 10, showLimit = 0
+
+exit
+
+
